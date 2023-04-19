@@ -50,21 +50,30 @@ Para publicar el proyecto primero debemos tener acceso a un hosting:
 3) Configuramos nuestros cpanel:
 
     3.1 creamos una base de datos en la opción de [Bases de datos MySQL®]
+
     3.2 creamos un usuario para adminsitrar la base de datos en la opción de [Usuarios MySQL] [Añadir nuevo usuario]
+    
     3.3 Para terminar esta configuracion añadimos el usuario que creamos a la base de datos en [Añadir usuario a la base de datos], nos llevará a otra pantalla donde le brindaremos todos los permisos.
 
 4) Descargamos el proyecto de GPS URL con laravel 8 y php 8
 - **[Presiona aquí para dirigirnos al proyecto](https://github.com/amoroso18/GPS-DETECTOR-CON-REDES-SOCIALES)**
+
     4.1 Presionamos en boton que dice CODE y presionamos en Download ZIP.
+
     4.2 Descomprimos el proyecto en nuestra computadora
+
     4.3 Nos dirigimos al archivo .env para cambiar la configuracion:
 
         APP_ENV=production
+
         APP_DEBUG=false
+
         APP_URL=https://midominioweb.com
 
         DB_DATABASE=EL_NOMBRE_DE_LA_BASE_DE_DATOS
+
         DB_USERNAME=EL_USUARIO_ADMINISTRADOR_DE_LA_BASE_DE_DATOS
+
         DB_PASSWORD=LA_CONTRASEÑA_DEL_USUARIO_ADMINISTRADOR_DE_LA_BASE_DE_DATOS
 
     4.4 Nos dirigimos a la carptea /public al archivo inde.php y cambiamos la configuracion:
@@ -78,20 +87,36 @@ Para publicar el proyecto primero debemos tener acceso a un hosting:
 
             $app = require_once __DIR__.'/../laravel/bootstrap/app.php';
 
-5) Volvemos al hosting a la sección de Archivos en la opción de Adminsitrar archivos y creamos una nueva carpeta con el nombre de laravel, en esa carpeta copiamos todo el contenido de nuestro proyecto con excepción de la carpeta public.
+5) Ingresamos al hosting a la sección de BASE DE DATOS en la opción de PhpMyAdmin.
 
-6) Ahora copiaremos todo el contenido de nuestra carpeta public en la carpeta de public html del administrador de archivos.
+    5.5 Le damos click en el nombre de nuestra base de datos.
 
-7) Felicidades ya tienes tu sistema de detección ip y gps.
+    5.6 Le damos click en la parte superior donde esta la opción de importar.
+
+    5.7 Le damos click en el boton que dice Seleccionar archivo y seleccionamos el archivo basededatos.sql que esta en la carpeta principal de nuestro proyecto y presionamos en continuar, esperamos que cargue y listo, ya tenemos nuestra base de datos cargada al hosting.
+
+6) Ingresamos al hosting a la sección de ARCHIVOS en la opción de ADMINISTRADOR DE ARCHIVOS y creamos una nueva carpeta con el nombre de laravel, en esa carpeta copiamos todo el contenido de nuestro proyecto con excepción de la carpeta public.
+
+7) Ahora copiaremos todo el contenido de nuestra carpeta public en la carpeta de public_html del administrador de archivos.
+
+8) Felicidades ya tienes tu sistema de detección ip y gps.
 
 
 
 ## ¿Cómo utilizar el proyecto?
 
+Ingresamos a nuestro dominio con las credenciales por defecto de usuario ROOT y contraseña ROOT y como primera vista veremos nuestro perfil en el sistema.
+Tendrémos acceso a los modulos de:
 
+    Creación de usuarios.
+    Suspeción de usuarios.
+    Creación de url para detectar gps e ip.
+    Mapa de geolocalización de nuestras url.
+    Gestor de las urls.
 
 ## Seguridad y vulneraciones de privacidad
 
+La seguridad del sistema dependerá del uso ético de la misma, recuerde cada contraseña esta encriptada. La vulneravilidad de la privacidad es autonoma de las personas que utilicen o presionen el enlace, este sistema no optiene información privada de las personas, sino que se puede utilizar con la finalidad de gestionar recursos de una misma empresa u entre otros fines adminsitrativos con geolocalización.
 
 
 ## Licencia de Laravel

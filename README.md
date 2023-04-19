@@ -23,34 +23,35 @@ Leaflet es una biblioteca JavaScript de código abierto que se utiliza para crea
 
 La app de Google Maps te permite ir a cualquier lugar gracias a la navegación sencilla paso a paso. Maps te muestra instrucciones sobre cómo llegar y utiliza información del tráfico en tiempo real para encontrar la mejor ruta que te lleve a tu destino.
 
-### Premium Partners
+### Para su instalación es necesario tener conocimiento básico de:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- **[Laravel](https://laravel.com/)**
+- **[PHP](https://www.php.net/manual/es/intro-whatis.php)**
+- **[Composer](https://getcomposer.org/)**
+- **[Comandos artisan](https://dev.to/leonmatiasm/los-comandos-php-artisan-mas-usados-por-mi-415p)**
+- **[Mysql](https://www.mysql.com/)**
+- **[LeaFlet](https://leafletjs.com/)**
+- **[Google Maps](https://www.google.com/maps)**
+- **[Deploy laravel 8 en hosting](https://github.com/amoroso18/GPS-DETECTOR-CON-REDES-SOCIALES)**
+- **[Google Developer - Analitica de sitios web](https://developers.google.com/analytics?hl=es-419)**
+- **[Facebook Developer - Analitica de facebook para negocios](https://developers.facebook.com/)**
 
-## Contributing
+## Publicar proyecto de laravel 8 en hosting
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## ¿Cómo utilizar el proyecto?
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+## Seguridad y vulneraciones de privacidad
+
+
+
+## Licencia de Laravel
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Licencia de GPS URL con PHP 8 & Laravel 8 
+
+El proyecto GPS URL con PHP 8 & Laravel 8 es OPEN-SOURCED software con licencia estandar [MIT license](https://opensource.org/licenses/MIT).

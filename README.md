@@ -7,9 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## GPS URL con PHP 8 & Laravel 8 
+## GPS URL con PHP 8.1 & Laravel 10 
 
-GPS URL con PHP 8 & Laravel 8 es un proyecto para navegadores web que facilita la gestión de rastreo ip y gps de los dispositivos con el cual van a ingresar. Es un proyecto que demuestra el uso de la mezcla de tecnologías actuales de codigo de programación, base de datos y uso de extesión de javascript, al igual que recursos libres como google maps.
+GPS URL con PHP 8.1 & Laravel 10 es un proyecto para navegadores web que facilita la gestión de rastreo ip y gps de los dispositivos con el cual van a ingresar. Es un proyecto que demuestra el uso de la mezcla de tecnologías actuales de codigo de programación, base de datos y uso de extesión de javascript, al igual que recursos libres como google maps.
 
 PHP está enfocado principalmente a la programación de scripts del lado del servidor, por lo que se puede hacer cualquier cosa que pueda hacer otro programa CGI, como recopilar datos de formularios, generar páginas con contenidos dinámicos, o enviar y recibir cookies. Aunque PHP puede hacer mucho más.
 
@@ -34,11 +34,11 @@ La app de Google Maps te permite ir a cualquier lugar gracias a la navegación s
 - **[Mysql](https://www.mysql.com/)**
 - **[LeaFlet](https://leafletjs.com/)**
 - **[Google Maps](https://www.google.com/maps)**
-- **[Públicar proyecto GPS URL con laravel 8 y php 8 en hosting](https://github.com/amoroso18/GPS-DETECTOR-CON-REDES-SOCIALES)**
+- **[Públicar proyecto GPS URL con PHP 8.1 & Laravel 10 en hosting](https://github.com/amoroso18/GPS-DETECTOR-CON-REDES-SOCIALES)**
 - **[Google Developer - Analitica de sitios web](https://developers.google.com/analytics?hl=es-419)**
 - **[Facebook Developer - Analitica de facebook para negocios](https://developers.facebook.com/)**
 
-## Publicar proyecto de laravel 8 en hosting
+## Publicar proyecto de laravel 10 en hosting
 
 Para publicar el proyecto primero debemos tener acceso a un hosting: 
 - **[Presiona aquí para buscar hosting disponibles en google](https://www.google.com/search?q=hosting+en+peru)**
@@ -55,7 +55,7 @@ Para publicar el proyecto primero debemos tener acceso a un hosting:
     
     3.3 Para terminar esta configuracion añadimos el usuario que creamos a la base de datos en [Añadir usuario a la base de datos], nos llevará a otra pantalla donde le brindaremos todos los permisos.
 
-4) Descargamos el proyecto de GPS URL con laravel 8 y php 8
+4) Descargamos el proyecto de GPS URL con PHP 8.1 & Laravel 10
 - **[Presiona aquí para dirigirnos al proyecto](https://github.com/amoroso18/GPS-DETECTOR-CON-REDES-SOCIALES)**
 
     4.1 Presionamos en boton que dice CODE y presionamos en Download ZIP.
@@ -105,18 +105,20 @@ Para publicar el proyecto primero debemos tener acceso a un hosting:
 
 ## ¿Cómo utilizar el proyecto?
 
-Ingresamos a nuestro dominio con las credenciales por defecto de usuario ROOT y contraseña ROOT y como primera vista veremos nuestro perfil en el sistema.
+Ingresamos a nuestro dominio con las credenciales de usuario ROOT@codeplayshop.com y contraseña 123456 y como primera vista veremos nuestro perfil en el sistema.
+
 Tendrémos acceso a los modulos de:
 
     Creación de usuarios.
     Suspeción de usuarios.
     Creación de url para detectar gps e ip.
+    Creación de fondos de pantallas para urls.
     Mapa de geolocalización de nuestras url.
     Gestor de las urls.
 
 ## Seguridad y vulneraciones de privacidad
 
-La seguridad del sistema dependerá del uso ético de la misma, recuerde cada contraseña esta encriptada. La vulneravilidad de la privacidad es autonoma de las personas que utilicen o presionen el enlace, este sistema no optiene información privada de las personas, sino que se puede utilizar con la finalidad de gestionar recursos de una misma empresa u entre otros fines adminsitrativos con geolocalización.
+La seguridad del sistema dependerá del uso ético de la misma, recuerde cada contraseña esta encriptada. La vulneravilidad de la privacidad es autonoma de las personas que utilicen o presionen el enlace. Este sistema no optiene información privada de las personas, sino que se puede utilizar con la finalidad de gestionar recursos de una misma empresa u entre otros fines operativos y adminsitrativos con geolocalización.
 
 
 ## Licencia de Laravel
@@ -125,4 +127,4 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Licencia de GPS URL con PHP 8 & Laravel 8 
 
-El proyecto GPS URL con PHP 8 & Laravel 8 tiene licencia estandar de software de fuente abierta [MIT license](https://opensource.org/licenses/MIT).
+El proyecto GPS URL con PHP 8.1 & Laravel 10 tiene licencia estandar de software de fuente abierta [MIT license](https://opensource.org/licenses/MIT).

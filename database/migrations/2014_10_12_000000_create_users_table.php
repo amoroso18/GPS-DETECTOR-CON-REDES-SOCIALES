@@ -17,9 +17,20 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->unsignedBigInteger('estado');
             $table->rememberToken();
             $table->timestamps();
         });
+        DB::table('users')->insert(
+            array(
+                [
+                    'name' => 'ROOT',
+                    'email' => 'ROOT@codeplayshop.com',
+                    'password' => '$2y$10$l.duPE6wrskJXDUoHBYeE.7zgQTiRols1hgsVwKuKX5vwasy.iCuO', // 123456
+                    'estado' => 1
+                ],
+            )
+        );
     }
 
     /**

@@ -54,4 +54,4 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Licencia de GPS URL con PHP 8 & Laravel 8 
 
-El proyecto GPS URL con PHP 8 & Laravel 8 es OPEN-SOURCED software con licencia estandar [MIT license](https://opensource.org/licenses/MIT).
+El proyecto GPS URL con PHP 8 & Laravel 8 tiene licencia estandar de software de fuente abierta [MIT license](https://opensource.org/licenses/MIT).

@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('enlaces', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('tipo_fondo_pantallas_id');
+            $table->string('titulo')->nullable();
             $table->string('descripcion')->nullable();
+            $table->integer('users_create_id')->nullable();
             $table->timestamps();
         });
         Schema::table('enlaces', function(Blueprint $table) {

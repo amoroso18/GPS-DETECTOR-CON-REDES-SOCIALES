@@ -40,20 +40,20 @@
             <img class="me-3" src="{{ asset('icons/clock.png') }}" alt="" width="48"
                 height="38">
             <div class="lh-1">
-                <h1 class="h6 mb-0 text-white lh-1">Novedades hasta la fecha</h1>
+                <h1 class="h6 mb-0 lh-1">Novedades hasta la fecha</h1>
                 <small>{{ date('d-m-Y')}}</small>
             </div>
         </div>
 
         <div class="my-3 p-3 bg-body rounded shadow-sm">
-            <h6 class="border-bottom pb-2 mb-0">Usuarios que ingresaron al sistema ( mostrando 5 últimos )</h6>
+            <h6 class="border-bottom pb-2 mb-0 text-primary">Usuarios que ingresaron al sistema ( mostrando 5 últimos )</h6>
 
             <div class="d-flex text-muted pt-3">
                 <img class="me-3" src="{{ asset('icons/spy_user.png') }}" alt="" width="48"
                 height="38">
 
                 <p class="pb-3 mb-0 small lh-sm border-bottom">
-                    <strong class="d-block text-gray-dark">@username</strong>
+                    <strong class="d-block">@username</strong>
                     Some representative placeholder content, with some information about this user. Imagine this being some
                     sort of status update, perhaps?
                 </p>
@@ -65,7 +65,7 @@
         </div>
 
         <div class="my-3 p-3 bg-body rounded shadow-sm">
-            <h6 class="border-bottom pb-2 mb-0">Enlaces localizador ( mostrando 5 últimos )</h6>
+            <h6 class="border-bottom pb-2 mb-0 text-primary">Enlaces localizador ( mostrando 5 últimos )</h6>
 
             <div class="d-flex text-muted pt-3">
                 <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32"
@@ -88,6 +88,32 @@
             <small class="d-block text-end mt-3">
                 <a href="#">Ver todos los enlaces</a>
             </small>
+        </div>
+        <div class="my-3 p-3 bg-body rounded shadow-sm">
+            <h6 class="border-bottom pb-2 mb-0 text-primary">Web's free detector</h6>
+
+            <div class="d-flex text-muted pt-3">
+                <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                    <a href="https://iplogger.org/" target="_blank">
+                        <div class="d-flex justify-content-between">
+                            <strong class="text-gray-dark">iplogger</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="d-flex text-muted pt-3">
+                <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                    <a href="https://rastrearnumero.com/herramientas/link/crearlink.php" target="_blank">
+                        <div class="d-flex justify-content-between">
+                            <strong class="text-gray-dark">rastrearnumero</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+           
+
         </div>
     </main>
 @endsection

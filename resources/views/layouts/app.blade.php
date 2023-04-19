@@ -86,7 +86,7 @@
         .bg-purple { background-color: #6f42c1; }
     </style>
 </head>
-<body class="bg-light">
+<body class="text-white bg-dark">
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
         <div class="container-fluid">
           <a class="navbar-brand" href="{{route('home')}}">SPY LOCATION SOFTWARE</a>
@@ -114,6 +114,9 @@
                 </ul>
               </li>
               <li class="nav-item">
+                <a class="nav-link" target="_blank" href="https://github.com/amoroso18/GPS-DETECTOR-CON-REDES-SOCIALES">Github</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" target="_blank" href="https://wa.me/51966673099?text=Necesito soporte para el Spy Location Software">Contactar con soporte</a>
               </li>
             </ul>
@@ -125,15 +128,47 @@
         </div>
       </nav>
       
-            @yield('content')
 
-      <br>
-    <hr>
+      @if(session()->has('error'))
+        <div class="alert alert-danger" role="alert">
+          <h4 class="alert-heading">Error encontrado..!</h4>
+          <hr>
+          <p class="mb-0">{{ session()->get('error') }}</p>
+        </div>
+				@endif
+				@if(session()->has('success'))
+          <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Correcto..!</h4>
+            <hr>
+            <p class="mb-0">{{ session()->get('success') }}</p>
+          </div>
+				@endif
+				@if(session()->has('warning'))
+          <div class="alert alert-warning" role="alert">
+            <h4 class="alert-heading">Problema..!</h4>
+            <hr>
+            <p class="mb-0">{{ session()->get('warning') }}</p>
+          </div>
+				@endif
+    
+       @yield('content')
 
-    <div class="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-      Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-  </div>
-  
+       <br>
+   
+      <footer class="mt-auto " style="position:fixed;
+      left:0px;
+      bottom:0px;
+      height:30px;
+      width:100%;">
+        <p>  Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }}) - codeplayshop.com</p>
+      </footer>
+
+   
+
+
+
+
+
     <script src="{{asset('bootstrap.bundle.min.js')}}"></script>
     <script>
         (function () {

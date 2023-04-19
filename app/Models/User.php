@@ -41,4 +41,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getUserCreate()
+    {
+        return $this->hasOne(User::class, 'id', 'users_create_id');
+    }
+    public function getUserUpdate()
+    {
+        return $this->hasOne(User::class, 'id', 'users_modifica_id');
+    }
 }

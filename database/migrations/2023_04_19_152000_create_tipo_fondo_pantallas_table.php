@@ -23,28 +23,16 @@ return new class extends Migration
         DB::table('tipo_fondo_pantallas')->insert(
             array(
                 [
-                    'red_social' => 'YOUTUBE',
-                    'celular' => 'defaul.jpg',
-                    'tableta' => 'defaul.jpg',
-                    'computadora' => 'defaul.jpg',
+                    'red_social' => 'YOUTUBE WHITE',
+                    'celular' => 'redes/white_youphone.png',
+                    'tableta' => 'redes/white_youtablet.png',
+                    'computadora' => 'redes/white_youdesktop.png',
                 ],
                 [
-                    'red_social' => 'FACEBOOK',
-                    'celular' => 'defaul.jpg',
-                    'tableta' => 'defaul.jpg',
-                    'computadora' => 'defaul.jpg',
-                ],
-                [
-                    'red_social' => 'WHATSAPP',
-                    'celular' => 'defaul.jpg',
-                    'tableta' => 'defaul.jpg',
-                    'computadora' => 'defaul.jpg',
-                ],
-                [
-                    'red_social' => 'TELEGRAM',
-                    'celular' => 'defaul.jpg',
-                    'tableta' => 'defaul.jpg',
-                    'computadora' => 'defaul.jpg',
+                    'red_social' => 'YOUTUBE DARK',
+                    'celular' => 'redes/youphone.png',
+                    'tableta' => 'redes/youtablet.png',
+                    'computadora' => 'redes/youdesktop.png',
                 ],
             )
         );

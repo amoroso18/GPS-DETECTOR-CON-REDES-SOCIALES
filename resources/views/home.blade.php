@@ -3,8 +3,8 @@
 @section('content')
     <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="{{ asset('icons/spy.png') }}" alt="" width="72" height="57">
-        <h2>Spy Location Software</h2>
-        <p class="lead">GPS URL con PHP 8 & Laravel 8 es un proyecto para navegadores web que facilita la gestión de
+        <h2>Rastreador GPS</h2>
+        <p class="lead">Rastreador GPS utiliza PHP 8.1 & Laravel 10.8 es un proyecto para navegadores web que facilita la gestión de
             rastreo ip y gps de los dispositivos con el cual van a ingresar. Es un proyecto que demuestra el uso de la
             mezcla de tecnologías actuales de codigo de programación, base de datos y uso de extesión de javascript, al
             igual que recursos libres como google maps.</p>

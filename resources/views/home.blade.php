@@ -5,9 +5,9 @@
         <img class="d-block mx-auto mb-4" src="{{ asset('icons/spy.png') }}" alt="" width="72" height="57">
         <h2>Rastreador GPS</h2>
         <p class="lead">Rastreador GPS utiliza PHP 8.1 & Laravel 10.8 es un proyecto para navegadores web que facilita la gestión de
-            rastreo ip y gps de los dispositivos con el cual van a ingresar. Es un proyecto que demuestra el uso de la
+            rastreo ip y gps de los dispositivos. Es un proyecto que demuestra el uso de la
             mezcla de tecnologías actuales de codigo de programación, base de datos y uso de extesión de javascript, al
-            igual que recursos libres como google maps.</p>
+            igual que recursos libres como google maps, entre otros.</p>
     </div>
     <div class="container">
         <div class="row g-5">
@@ -36,7 +36,7 @@
 
 
     <main class="container">
-        <div class="d-flex align-items-center p-3 my-3 text-white bg-primary rounded shadow-sm">
+        {{-- <div class="d-flex align-items-center p-3 my-3 text-white bg-primary rounded shadow-sm">
             <img class="me-3" src="{{ asset('icons/clock.png') }}" alt="" width="48"
                 height="38">
             <div class="lh-1">
@@ -88,9 +88,19 @@
             <small class="d-block text-end mt-3">
                 <a href="#">Ver todos los enlaces</a>
             </small>
-        </div>
+        </div> --}}
         <div class="my-3 p-3 bg-body rounded shadow-sm">
             <h6 class="border-bottom pb-2 mb-0 text-primary">Web's free detector</h6>
+
+            <div class="d-flex text-muted pt-3">
+                <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                    <a href="https://github.com/amoroso18/rastreador-gps" target="_blank">
+                        <div class="d-flex justify-content-between">
+                            <strong class="text-gray-dark">Rastreador GPS</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
             <div class="d-flex text-muted pt-3">
                 <div class="pb-3 mb-0 small lh-sm border-bottom w-100">

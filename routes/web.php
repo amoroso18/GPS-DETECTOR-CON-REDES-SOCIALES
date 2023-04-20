@@ -1,23 +1,31 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+Route::get('/clear-cache', function() {
+    $run = Artisan::call('config:clear');
+    $run = Artisan::call('config:cache');
+    $run = Artisan::call('cache:clear');
+    $run = Artisan::call('route:cache');
+    $run = Artisan::call('route:clear');
+    $run = Artisan::call('view:cache');
+    $run = Artisan::call('view:clear');
+    return "Cache is cleared";
+});
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'vista'])->name('vista');
 
+Route::get('login', [App\Http\Controllers\UserController::class, 'ingresar'])->name('login');
+Route::post('credenciales', [App\Http\Controllers\UserController::class, 'credenciales'])->name('credenciales');
+
+Route::get('/guardar-permisos', [App\Http\Controllers\HomeController::class, 'vista_guardar_permisos'])->name('vista_guardar_permisos');
+Route::get('/guardar-ip-location', [App\Http\Controllers\HomeController::class, 'vista_guardar_iplocation'])->name('vista_guardar_iplocation');
+
 Auth::routes();
 
-Route::group(['middleware' => 'auth'], function()
+Route::group(['middleware' => ['auth','estado']], function()
 {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

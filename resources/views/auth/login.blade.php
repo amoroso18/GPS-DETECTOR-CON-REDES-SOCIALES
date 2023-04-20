@@ -2,7 +2,7 @@
 
 @section('content')
 <main class="form-signin">
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ route('credenciales') }}">
         <img class="mb-4" src="{{asset('icons/spy.png')}}" alt="" width="72" height="57">
         <h1 class="h3 mb-3 fw-normal">Ingresa tus credenciales</h1>
         @csrf

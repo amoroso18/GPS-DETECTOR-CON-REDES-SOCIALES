@@ -89,7 +89,7 @@
 <body class="text-white bg-dark">
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{{route('home')}}">SPY LOCATION SOFTWARE</a>
+          <a class="navbar-brand" href="{{route('home')}}">RASTREADOR</a>
           <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -97,17 +97,17 @@
           <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{route('home')}}">Inicio</a>
+                <a class="nav-link {{ request()->is('home') ? 'active':'' }}" aria-current="page" href="{{route('home')}}">Inicio</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Gestor de usuarios</a>
+                <a class="nav-link dropdown-toggle {{ Request::routeIs('crear_usuario') ? 'active' : '' }}{{ Request::routeIs('bandeja_usuario') ? 'active' : '' }}" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Gestor de usuarios</a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown01">
                   <li><a class="dropdown-item" href="{{route('crear_usuario')}}">Crear usuario</a></li>
                   <li><a class="dropdown-item" href="{{route('bandeja_usuario')}}">Bandeja de usuario</a></li>
                 </ul>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">GPS localizador</a>
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle {{ Request::routeIs('crear_enlaces') ? 'active' : '' }}{{ Request::routeIs('bandeja_enlaces') ? 'active' : '' }}" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">GPS localizador</a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown01">
                   <li><a class="dropdown-item" href="{{route('crear_enlaces')}}">Crear enlaces</a></li>
                   <li><a class="dropdown-item" href="{{route('bandeja_enlaces')}}">Bandeja de enlaces</a></li>
@@ -155,12 +155,12 @@
 
        <br>
    
-      <footer class="mt-auto " style="position:fixed;
+      <footer class="text-center " style="position:fixed;
       left:0px;
       bottom:0px;
       height:30px;
       width:100%;">
-        <p>  Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }}) - codeplayshop.com</p>
+        <p>  Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }}) AECC &copy; 2023</p>
       </footer>
 
    

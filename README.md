@@ -93,7 +93,7 @@ Para publicar el proyecto primero debemos tener acceso a un hosting:
 
     5.6 Le damos click en la parte superior donde esta la opción de importar.
 
-    5.7 Le damos click en el boton que dice Seleccionar archivo y seleccionamos el archivo basededatos.sql que esta en la carpeta principal de nuestro proyecto y presionamos en continuar, esperamos que cargue y listo, ya tenemos nuestra base de datos cargada al hosting.
+    5.7 Le damos click en el boton que dice Seleccionar archivo y seleccionamos el archivo gpsdetector.sql que esta en la carpeta principal de nuestro proyecto y presionamos en continuar, esperamos que cargue y listo, ya tenemos nuestra base de datos cargada al hosting.
 
 6) Ingresamos al hosting a la sección de ARCHIVOS en la opción de ADMINISTRADOR DE ARCHIVOS y creamos una nueva carpeta con el nombre de laravel, en esa carpeta copiamos todo el contenido de nuestro proyecto con excepción de la carpeta public.
 

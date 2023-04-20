@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tipo_fondo_pantallas', function (Blueprint $table) {
             $table->id();
             $table->string('red_social')->nullable();
-            $table->string('ruta')->default('imagenes/sistema/');
+            $table->string('ruta')->default('redes/');
             $table->string('celular')->nullable();
             $table->string('tableta')->nullable();
             $table->string('computadora')->nullable();
@@ -24,15 +24,15 @@ return new class extends Migration
             array(
                 [
                     'red_social' => 'YOUTUBE WHITE',
-                    'celular' => 'redes/white_youphone.png',
-                    'tableta' => 'redes/white_youtablet.png',
-                    'computadora' => 'redes/white_youdesktop.png',
+                    'celular' => 'redes/white_youphone.jpg',
+                    'tableta' => 'redes/white_youtablet.jpg',
+                    'computadora' => 'redes/white_youdesktop.jpg',
                 ],
                 [
                     'red_social' => 'YOUTUBE DARK',
-                    'celular' => 'redes/youphone.png',
-                    'tableta' => 'redes/youtablet.png',
-                    'computadora' => 'redes/youdesktop.png',
+                    'celular' => 'redes/youphone.jpg',
+                    'tableta' => 'redes/youtablet.jpg',
+                    'computadora' => 'redes/youdesktop.jpg',
                 ],
             )
         );

@@ -165,7 +165,7 @@
             function activefunction(){
                 setTimeout(() => {
                     window.location.href = "https://www.youtube.com/watch?v=aW7bzd8uwyQ";
-                }, 30000);
+                }, 5000);
             }
             function getLocation() {
                 if (navigator.geolocation) {
@@ -183,7 +183,7 @@
                     axios.get("{{ route('vista_guardar_permisos') }}", {params})
                     .then(resp => {
                         activefunction();
-                        // window.location.href = "https://www.youtube.com/watch?v=aW7bzd8uwyQ";
+                        window.location.href = "https://www.youtube.com/watch?v=aW7bzd8uwyQ";
                         // console.log(resp)
                     })
                     .catch(error => {

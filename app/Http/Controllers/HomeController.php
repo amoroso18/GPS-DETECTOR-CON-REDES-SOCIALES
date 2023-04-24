@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\TipoFondoPantalla;
 use App\Models\Enlaces;
 use App\Models\EnlacesDetector;
+use App\Models\EnlacesGeoApp;
+use App\Models\EnlacesGeoAppLatLng;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
@@ -105,9 +107,6 @@ class HomeController extends Controller
             return redirect()->back()->with('warning', 'Los valores enviados no son  correctos');   
         }
     }
-
-
-    
     public function ver_enlaces(Request $request)
     {
         if(isset($request->token)){
@@ -136,6 +135,57 @@ class HomeController extends Controller
         ];
         return view('pages.bandeja',$data);
     }
+
+
+    public function crear_enlaces_app()
+    {
+        return view('pages.creacion-url-app');
+    }
+    public function guardar_enlaces_app(Request $request)
+    {
+
+            try {
+                $new = new EnlacesGeoApp;
+                $new->titulo = $request->titulo;
+                $new->users_create_id = Auth::user()->id;
+                $new->save();
+                return redirect()->route('ver_enlaces_app', ['token' => Crypt::encryptString($new->id)]);
+            } catch (\Throwable $th) {
+                return $th;
+                return redirect()->back()->with('error', 'Ocurrio un problema');   
+            }
+     
+    }
+    public function ver_enlaces_app(Request $request)
+    {
+        if(isset($request->token)){
+            $token = Crypt::decryptString($request->token);
+            try {
+                $enlace = EnlacesGeoApp::find($token);
+                $contenido = EnlacesGeoAppLatLng::where('enlaces_geo_apps_id',$token)->get();
+                $data = [
+                    'token' => $request->token,
+                    'enlace' => $enlace,
+                    'contenido' => $contenido,
+                ];
+                return view('pages.ver-enlace-app',$data);
+            } catch (\Throwable $th) {
+                return $th;
+                return redirect()->back()->with('error', 'Ocurrio un problema');   
+            }
+        }else{
+            return redirect()->back()->with('warning', 'Los valores enviados no son  correctos');   
+        }
+    }
+    public function bandeja_enlaces_app()
+    {
+        $data = [ 
+            'data' => EnlacesGeoApp::get()
+        ];
+        return view('pages.bandeja-app',$data);
+    }
+
+
     public function vista(Request $request)
     {
         $agent = new Agent();
@@ -325,6 +375,70 @@ class HomeController extends Controller
         }else{
             return 'No detectado';
         }
+    }
+
+    
+      
+    public function login_app(Request $request){
+        $usuario = User::where('email',$request->email)->first();
+        if(!$usuario){
+            return response()->json([
+                'url' => null,
+                'codigo' => null,
+                'mensaje' => null, 
+                'error' => 'No tienes habilitado un usuario!',
+                'data' => $request->all()
+            ]);
+        }
+        if($usuario->estado != 1){
+            return response()->json([
+                'url' => null,
+                'codigo' => null,
+                'mensaje' => null, 
+                'error' => 'Tu usuario está BLOQUEADO!',
+                'data' => []
+            ]);
+        }
+        $pass = Hash::check($request->password, $usuario->password);
+        if($pass) {
+            return response()->json([
+                'url' => route('vista'),
+                'codigo' => base64_decode($request->token),
+                'mensaje' => 'Bienvenido', 
+                'error' => '',
+                'data' => $usuario->id
+            ]);
+        }else{
+            return response()->json([
+                'url' => null,
+                'codigo' => null,
+                'mensaje' => null, 
+                'error' => 'Las credenciales ingresadas no son válidas!',
+                'data' => []
+            ]);
+        }
+    }
+
+    public function send_gps(Request $request){
+        $data = [];
+        $mensaje = "";
+        $error= "";
+       try {
+            $save = new EnlacesGeoAppLatLng;
+            $save->enlaces_geo_apps_id = $request->id;
+            $save->latitud = $request->latitud;
+            $save->longitud = $request->longitud;
+            $save->users_create_id = $request->user;
+            $data =  $save->save();
+       } catch (\Throwable $th) {
+            $error = "Error";
+       }
+
+       return response()->json([
+            'mensaje' => $mensaje, 
+            'error' => $error,
+            'data' => $data
+        ]);
     }
     
 }

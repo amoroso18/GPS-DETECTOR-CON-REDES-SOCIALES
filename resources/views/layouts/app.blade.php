@@ -113,6 +113,13 @@
                   <li><a class="dropdown-item" href="{{route('bandeja_enlaces')}}">Bandeja de enlaces</a></li>
                 </ul>
               </li>
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle {{ Request::routeIs('crear_enlaces_app') ? 'active' : '' }}{{ Request::routeIs('bandeja_enlaces_app') ? 'active' : '' }}" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Aplicativo Celular</a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                  <li><a class="dropdown-item" href="{{route('crear_enlaces_app')}}">Crear enlaces de app</a></li>
+                  <li><a class="dropdown-item" href="{{route('bandeja_enlaces_app')}}">Bandeja de enlaces de app</a></li>
+                </ul>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" target="_blank" href="https://github.com/amoroso18/GPS-DETECTOR-CON-REDES-SOCIALES">Github</a>
               </li>

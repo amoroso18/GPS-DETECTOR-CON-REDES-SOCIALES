@@ -85,6 +85,7 @@
 
         .bg-purple { background-color: #6f42c1; }
     </style>
+       @stack("css_custom")
 </head>
 <body class="text-white bg-dark">
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
@@ -118,6 +119,7 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdown01">
                   <li><a class="dropdown-item" href="{{route('crear_enlaces_app')}}">Crear enlaces de app</a></li>
                   <li><a class="dropdown-item" href="{{route('bandeja_enlaces_app')}}">Bandeja de enlaces de app</a></li>
+                  <li><a class="dropdown-item" href="{{asset('appAndroid/application-5ca98a54-d2e6-4397-b622-faf0e17dd723.apk')}}">Descargar APP ANDROID</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -185,6 +187,7 @@
             })
         })()
     </script>
+      @stack('js_custom')
 </body>
 </html>
 

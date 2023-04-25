@@ -440,5 +440,26 @@ class HomeController extends Controller
             'data' => $data
         ]);
     }
+    public function mapa_app(Request $request){
+        if(isset($request->token)){
+            $token = Crypt::decryptString($request->token);
+            try {
+                $enlace = EnlacesGeoApp::find($token);
+                $contenido = EnlacesGeoAppLatLng::where('enlaces_geo_apps_id',$token)->get();
+                $data = [
+                    'token' => $request->token,
+                    'enlace' => $enlace,
+                    'contenido' => $contenido,
+                ];
+                return view('pages.ver-mapa-app',$data);
+            } catch (\Throwable $th) {
+                return $th;
+                return redirect()->back()->with('error', 'Ocurrio un problema');   
+            }
+        }else{
+            return redirect()->back()->with('warning', 'Los valores enviados no son  correctos');   
+        }
+    }
+    
     
 }

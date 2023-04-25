@@ -109,12 +109,27 @@ Ingresamos a nuestro dominio con las credenciales de usuario ROOT@codeplayshop.c
 
 Tendrémos acceso a los modulos de:
 
-    Creación de usuarios.
-    Bandeja de usuarios con activación y suspeción de usuarios.
-    Creación de url para rastreo ip o gps.
-    Bandeja de urls de rastreo ip o gps.
-    Creación de fondos de pantallas para urls (No diposnible en esta versión).
-    Mapa de geolocalización de nuestras url (No diposnible en esta versión).
+    Sección de usuarios: 
+        Creación de usuarios.
+        Bandeja de usuarios con activación y suspeción de usuarios.
+
+    Sección de rastro urls-ip: 
+        Creación de url para rastreo ip o gps.
+        Bandeja de urls de rastreo ip o gps.
+        Creación de fondos de pantallas para urls (No diposnible en esta versión).
+        Mapa de geolocalización de nuestras url (No diposnible en esta versión).
+
+    Sección de envio de coordendas desde app:
+        Modulo para crear enlaces para el Aplicativo ANDROID.
+        Bandeja de coordenadas enviadas desde el Aplicativo ANDROID.
+        Mapa de coordenadas.
+        Descargar las coordenadas en excel.
+        [Descarga Aplicativo para dispositivos ANDROID para envio de coordenadas](https://github.com/amoroso18/rastreador-gps/public/appAndroid/application-5ca98a54-d2e6-4397-b622-faf0e17dd723.apk)
+
+        
+
+        
+   
 
 ## Seguridad y vulneraciones de privacidad
 

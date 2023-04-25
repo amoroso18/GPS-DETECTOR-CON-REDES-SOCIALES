@@ -47,4 +47,5 @@ Route::group(['middleware' => ['auth','estado']], function()
     Route::post('/guardar-enlaces-app', [App\Http\Controllers\HomeController::class, 'guardar_enlaces_app'])->name('guardar_enlaces_app');
     Route::get('/bandeja-enlaces-app', [App\Http\Controllers\HomeController::class, 'bandeja_enlaces_app'])->name('bandeja_enlaces_app');
     Route::get('/ver-enlaces-app', [App\Http\Controllers\HomeController::class, 'ver_enlaces_app'])->name('ver_enlaces_app');
+    Route::get('/bandeja-enlaces-ver-mapa-app', [App\Http\Controllers\HomeController::class, 'mapa_app'])->name('mapa_app');
 });

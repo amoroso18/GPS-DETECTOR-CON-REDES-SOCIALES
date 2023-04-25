@@ -124,12 +124,11 @@ Tendrémos acceso a los modulos de:
         Bandeja de coordenadas enviadas desde el Aplicativo ANDROID.
         Mapa de coordenadas.
         Descargar las coordenadas en excel.
-        Aplicativo para dispositivos ANDROID para envio de coordenadas [Descargar](https://github.com/amoroso18/rastreador-gps/blob/main/public/appAndroid/application-5ca98a54-d2e6-4397-b622-faf0e17dd723.apk).
-
         
-
         
-   
+## Aplicativo
+        
+Aplicativo para dispositivos ANDROID para envio de coordenadas [Descargar](https://github.com/amoroso18/rastreador-gps/blob/main/public/appAndroid/application-5ca98a54-d2e6-4397-b622-faf0e17dd723.apk).
 
 ## Seguridad y vulneraciones de privacidad
 

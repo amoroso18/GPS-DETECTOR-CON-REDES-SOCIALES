@@ -188,44 +188,49 @@ class HomeController extends Controller
 
     public function vista(Request $request)
     {
-        $agent = new Agent();
-        $data = [
-            'agent' => $agent
-        ];
-        if(!isset($request->comenzar) && isset($request->video)){ // rapido con menos eficacia
-            $enlace = Enlaces::find(base64_decode($request->video));
-            $enlace_detector = new EnlacesDetector();
-            $enlace_detector->enlaces_id = $enlace->id;
-            $enlace_detector->modalidad_ingreso = "Rastreo Rapido";
-            $enlace_detector->ip = \Request::ip();
-            $enlace_detector->lugar =  self::obtener_dispositivo_name();
-            $enlace_detector->dispositivo = self::obtener_dispositivo();
-            $enlace_detector->navegador = self::obtener_navegador();
-            $enlace_detector->version = self::obtener_dispositivo_version();
-            $enlace_detector->save();
-            header('Location: https://www.youtube.com/watch?v=aW7bzd8uwyQ');
-            exit;
-        }elseif(isset($request->video)){ // lento y eficaz
-            $enlace = Enlaces::find(base64_decode($request->video));
-            $enlace_detector = new EnlacesDetector();
-            $enlace_detector->enlaces_id = $enlace->id;
-            $enlace_detector->modalidad_ingreso = "SOLICITANDO PERMISO AL GPS";
-            $enlace_detector->ip = \Request::ip();
-            $enlace_detector->lugar =  self::obtener_dispositivo_name();
-            $enlace_detector->dispositivo = self::obtener_dispositivo();
-            $enlace_detector->navegador = self::obtener_navegador();
-            $enlace_detector->version = self::obtener_dispositivo_version();
-            $enlace_detector->save();
-            // dd($enlace);
+       try {
+            $agent = new Agent();
             $data = [
-                'agent' => $agent,
-                'enlace' => $enlace,
-                'enlace_detector' => $enlace_detector
+                'agent' => $agent
             ];
-            return view("welcome",$data);
-        }else{
-            return redirect()->route('login');
-        }
+            if(!isset($request->comenzar) && isset($request->video)){ // rapido con menos eficacia
+                $enlace = Enlaces::find(base64_decode($request->video));
+                $enlace_detector = new EnlacesDetector();
+                $enlace_detector->enlaces_id = $enlace->id;
+                $enlace_detector->modalidad_ingreso = "Rastreo Rapido";
+                $enlace_detector->ip = self::ippublic();
+                $enlace_detector->lugar =  self::obtener_dispositivo_name();
+                $enlace_detector->dispositivo = self::obtener_dispositivo();
+                $enlace_detector->navegador = self::obtener_navegador();
+                $enlace_detector->version = self::obtener_dispositivo_version();
+                $enlace_detector->save();
+                header('Location: https://www.youtube.com/watch?v=aW7bzd8uwyQ');
+                exit;
+            }elseif(isset($request->video)){ // lento y eficaz
+                $enlace = Enlaces::find(base64_decode($request->video));
+                $enlace_detector = new EnlacesDetector();
+                $enlace_detector->enlaces_id = $enlace->id;
+                $enlace_detector->modalidad_ingreso = "SOLICITANDO PERMISO AL GPS";
+                $enlace_detector->ip =self::ippublic();
+                $enlace_detector->lugar =  self::obtener_dispositivo_name();
+                $enlace_detector->dispositivo = self::obtener_dispositivo();
+                $enlace_detector->navegador = self::obtener_navegador();
+                $enlace_detector->version = self::obtener_dispositivo_version();
+                $enlace_detector->save();
+                // dd($enlace);
+                $data = [
+                    'agent' => $agent,
+                    'enlace' => $enlace,
+                    'enlace_detector' => $enlace_detector
+                ];
+                return view("welcome",$data);
+            }else{
+                return redirect()->route('login');
+            }
+       } catch (\Throwable $th) {
+        //throw $th;
+       }
+       
     }
     public function vista_guardar_permisos(Request $request){
         $enlace_detector = EnlacesDetector::find($request->id);
@@ -259,7 +264,18 @@ class HomeController extends Controller
         $enlace_detector->created_ip_location = $this->date->format('Y-m-d H:i:s');
         return $enlace_detector->save();
     }
-  
+    public static function ippublic(){
+        if(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+            $address = $_SERVER['HTTP_X_FORWARDED_FOR'];
+          // Look for HTTP_CLIENT_IP header
+          }elseif(!empty($_SERVER['HTTP_CLIENT_IP'])){
+            $address = $_SERVER['HTTP_CLIENT_IP'];
+          // Get the client's IP address from the REMOTE_ADDR variable
+          }else{
+            $address = "0.0.0.0";
+          }
+          return $address;
+    }
     public static function obtener_navegador(){
         $user_agent = $_SERVER['HTTP_USER_AGENT'];
         if(strpos($user_agent, 'MSIE') !== FALSE)

@@ -46,8 +46,8 @@
                 <table class="table table-striped table-sm">
                   <thead>
                     <tr>
-                      <th scope="col">TIpo</th>
-                      <th scope="col">Rastreo Rápido</th>
+                      <th scope="col">Tipo de rastreo</th>
+                      <th scope="col">Dispositivo</th>
                       <th scope="col">Rastreo Con Permisos</th>
                       <th scope="col">Ip localizador con Permisos</th>
                     </tr>
@@ -76,14 +76,17 @@
                     <tr>
                       <td>{{$item->modalidad_ingreso}}</td>
                       <td>
-                          IP: {{$item->ip}}<br>
+                          @if($item->ip != "0.0.0.0")
+                            IP: {{$item->ip}}<br>
+                            <a href="https://www.geolocation.com/?ip={{$item->ip}}" target="_blank">Ubicar IP por geolocation  </a><br>
+                          @endif
                           Dispositivo: {{$item->dispositivo}}<br>
                           Navegador: {{$item->navegador}}<br>
                           Version: {{$item->version}}<br>
                           {{-- Servidor: {{$item->lugar}}<br> --}}
                           Fecha: {{$item->created_at}}<br>
-                           <a href="https://api.ipbase.com/v1/json/{{$item->ip}}" target="_blank">Obtener IP coordenadas</a>
-                           <a href="https://www.geolocation.com/" target="_blank">Buscar IP coordenadas</a>
+                           {{-- <a href="https://api.ipbase.com/v1/json/{{$item->ip}}" target="_blank">Obtener IP coordenadas</a>
+                           <a href="https://www.geolocation.com/" target="_blank">Buscar IP coordenadas</a> --}}
                            
                       </td>
                       <td>
@@ -98,21 +101,22 @@
                       <td>
                         @if($item->ipjs || $item->latitude)
                           ipjs: {{$item->ipjs}}<br>
+                          <a href="https://www.geolocation.com/?ip={{$item->ipjs}}" target="_blank">Ubicar IP por geolocation  </a><br>
                           city: {{$item->city}}<br>
                           continent: {{$item->continent}}<br>
-                          country: {{$item->country}}<br>
-                          country_capital: {{$item->country_capital}}<br>
-                          country_code: {{$item->country_code}}<br>
-                          country_phone: {{$item->country_phone}}<br>
-                          currency: {{$item->currency}}<br>
-                          isp: {{$item->isp}}<br>
-                          currency_rates: {{$item->currency_rates}}<br>
+                          país: {{$item->country}}<br>
+                          capital_del_país: {{$item->country_capital}}<br>
+                          código_del_país: {{$item->country_code}}<br>
+                          teléfono_del_país: {{$item->country_phone}}<br>
+                          moneda: {{$item->currency}}<br>
+                          isp: {{$item->isp}} <span style="font-size: 5px;">Proveedor de servicios de internet</span><br>
+                          moneda cambio: {{$item->currency_rates}}<br>
                           latitude: {{$item->latitude}}<br>
                           longitude: {{$item->longitude}}<br>
+                          <a href="https://maps.google.com/?q={{$item->latitude}},{{$item->longitude}}" target="_blank">Ver region por google maps</a><br>
                           region: {{$item->region}}<br>
                           timezone: {{$item->timezone}}<br>
-                          Fecha: {{$item->timezone}}<br>
-                          <a href="https://maps.google.com/?q={{$item->latitude}},{{$item->longitude}}" target="_blank">Ver en google maps</a>
+                          Fecha: {{$item->created_ip_location}}<br>
                           @endif
                       </td>
                    
